@@ -71,4 +71,4 @@ def downloadFile():
     return jsonify({'status' : "Success", 'status_code' : 200, 'message' : "File downloaded successfully!", 'data' : finalResponse})
 
 if __name__ == "__main__":
-    app.run('127.0.0.1', port=5800, debug=True)
+    app.run(debug=True)
