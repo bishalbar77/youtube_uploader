@@ -51,9 +51,9 @@ def add_video_to_youtube_playlist():
 
     fileByte.seek(0)
 
-    # with open(os.path.join(UPLOAD_FOLDER, FILE_NAME), 'wb') as f:
-    #     f.write(fileByte.read())
-    #     f.close()
+    with open(os.path.join(UPLOAD_FOLDER, FILE_NAME), 'wb') as f:
+        f.write(fileByte.read())
+        f.close()
         
     # mediaBody = MediaFileUpload('./static/uploads/video.mp4')
     # argss = Namespace(
