@@ -135,7 +135,7 @@ def uploadfun(args, playlist_id):
 mediaBody = MediaFileUpload('./static/uploads/video.mp4')
 argss = Namespace(
     auth_host_name='localhost', 
-    auth_host_port=[8080, 8090], 
+    auth_host_port=[8000, 8080], 
     category='27', 
     description="Hello", 
     keywords='', 
@@ -145,3 +145,5 @@ argss = Namespace(
     privacyStatus='private', 
     title="Hey"
 )
+
+uploadfun(argss, "PLbEdrDi1tPFjYc8hQI7d5Ed-Ua5aauSrP")
