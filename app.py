@@ -56,19 +56,19 @@ def add_video_to_youtube_playlist():
         f.close()
         
     mediaBody = MediaFileUpload('./static/uploads/video.mp4')
-    # argss = Namespace(
-    #     auth_host_name='localhost', 
-    #     auth_host_port=[8000, 8080], 
-    #     category='27', 
-    #     description=description, 
-    #     keywords='', 
-    #     file=mediaBody,
-    #     logging_level='ERROR', 
-    #     noauth_local_webserver=False, 
-    #     privacyStatus='private', 
-    #     title=title
-    # )
-    # finalResponse = uploadfun(argss, playlist_id)
+    argss = Namespace(
+        auth_host_name='localhost', 
+        auth_host_port=[8000, 8080], 
+        category='27', 
+        description=description, 
+        keywords='', 
+        file=mediaBody,
+        logging_level='ERROR', 
+        noauth_local_webserver=False, 
+        privacyStatus='private', 
+        title=title
+    )
+    uploadfun(argss, playlist_id)
     return jsonify({'status' : "Success", 'status_code' : 200, 'message' : "Video will be added to the playlist!", 'data' : ''})
 
 if __name__ == "__main__":
