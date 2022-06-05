@@ -9,7 +9,7 @@ from argparse import Namespace
 from upload import uploadfun
 from googleapiclient.http import MediaFileUpload
 
-CLIENT_SECRET_FILE = 'client_secret.json'
+CLIENT_SECRET_FILE = os.environ.get('client_secret')
 API_NAME = 'drive'
 API_VERSION = 'v3'
 SCOPES = ['https://www.googleapis.com/auth/drive']
@@ -18,7 +18,6 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 
 app = Flask(__name__)
 CORS(app)
-service.files().get_media(fileId="1IGnO0noipDvcboDFATlnAVyAnslNpc1S")
 
 
 FILE_NAME = 'video.mp4'
