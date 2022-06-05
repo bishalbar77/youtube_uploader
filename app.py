@@ -55,7 +55,7 @@ def add_video_to_youtube_playlist():
         f.write(fileByte.read())
         f.close()
         
-    # mediaBody = MediaFileUpload('./static/uploads/video.mp4')
+    mediaBody = MediaFileUpload('./static/uploads/video.mp4')
     # argss = Namespace(
     #     auth_host_name='localhost', 
     #     auth_host_port=[8000, 8080], 
