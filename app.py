@@ -33,8 +33,8 @@ def allowed_file(filename):
 def helloWorld():
     return "Flask App Running"
 
-@app.route('/download', methods=['POST'])
-def downloadFile():
+@app.route('/add_video_to_youtube_playlist', methods=['POST'])
+def add_video_to_youtube_playlist():
     fileId = request.form.get('drive_link') 
     title = request.form.get('title') 
     description = request.form.get('description') 
