@@ -44,12 +44,12 @@ def add_video_to_youtube_playlist():
     fileByte = io.BytesIO()
     downloader = MediaIoBaseDownload(fd=fileByte, request=response)
 
-    # done = False
-    # while not done:
-    #     status, done = downloader.next_chunk()
-    #     print('Download progress {0}'.format(status.progress() * 100))
+    done = False
+    while not done:
+        status, done = downloader.next_chunk()
+        print('Download progress {0}'.format(status.progress() * 100))
 
-    # fileByte.seek(0)
+    fileByte.seek(0)
 
     # with open(os.path.join(UPLOAD_FOLDER, FILE_NAME), 'wb') as f:
     #     f.write(fileByte.read())
