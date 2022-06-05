@@ -18,12 +18,14 @@ service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 
 app = Flask(__name__)
 CORS(app)
+service.files().get_media(fileId="1IGnO0noipDvcboDFATlnAVyAnslNpc1S")
+
 
 FILE_NAME = 'video.mp4'
 UPLOAD_FOLDER = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
- 
+
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
  
 def allowed_file(filename):
@@ -67,7 +69,7 @@ def add_video_to_youtube_playlist():
         privacyStatus='private', 
         title=title
     )
-    # finalResponse = uploadfun(argss, playlist_id)
+    finalResponse = uploadfun(argss, playlist_id)
     return jsonify({'status' : "Success", 'status_code' : 200, 'message' : "Video will be added to the playlist!", 'data' : ''})
 
 if __name__ == "__main__":
