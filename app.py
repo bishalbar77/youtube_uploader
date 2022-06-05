@@ -44,31 +44,31 @@ def add_video_to_youtube_playlist():
     fileByte = io.BytesIO()
     downloader = MediaIoBaseDownload(fd=fileByte, request=response)
 
-    done = False
-    while not done:
-        status, done = downloader.next_chunk()
-        print('Download progress {0}'.format(status.progress() * 100))
+    # done = False
+    # while not done:
+    #     status, done = downloader.next_chunk()
+    #     print('Download progress {0}'.format(status.progress() * 100))
 
-    fileByte.seek(0)
+    # fileByte.seek(0)
 
-    with open(os.path.join(UPLOAD_FOLDER, FILE_NAME), 'wb') as f:
-        f.write(fileByte.read())
-        f.close()
+    # with open(os.path.join(UPLOAD_FOLDER, FILE_NAME), 'wb') as f:
+    #     f.write(fileByte.read())
+    #     f.close()
         
-    mediaBody = MediaFileUpload('./static/uploads/video.mp4')
-    argss = Namespace(
-        auth_host_name='localhost', 
-        auth_host_port=[8000, 8080], 
-        category='27', 
-        description=description, 
-        keywords='', 
-        file=mediaBody,
-        logging_level='ERROR', 
-        noauth_local_webserver=False, 
-        privacyStatus='private', 
-        title=title
-    )
-    finalResponse = uploadfun(argss, playlist_id)
+    # mediaBody = MediaFileUpload('./static/uploads/video.mp4')
+    # argss = Namespace(
+    #     auth_host_name='localhost', 
+    #     auth_host_port=[8000, 8080], 
+    #     category='27', 
+    #     description=description, 
+    #     keywords='', 
+    #     file=mediaBody,
+    #     logging_level='ERROR', 
+    #     noauth_local_webserver=False, 
+    #     privacyStatus='private', 
+    #     title=title
+    # )
+    # finalResponse = uploadfun(argss, playlist_id)
     return jsonify({'status' : "Success", 'status_code' : 200, 'message' : "Video will be added to the playlist!", 'data' : ''})
 
 if __name__ == "__main__":
