@@ -132,18 +132,18 @@ def uploadfun(args, playlist_id):
     except HttpError as e:
         print("An HTTP error %d occurred:\n%s" % (e.resp.status, e.content))
 
-mediaBody = MediaFileUpload('./static/uploads/video.mp4')
-argss = Namespace(
-    auth_host_name='localhost', 
-    auth_host_port=[8000, 8080], 
-    category='27', 
-    description="Hello", 
-    keywords='', 
-    file=mediaBody,
-    logging_level='ERROR', 
-    noauth_local_webserver=False, 
-    privacyStatus='private', 
-    title="Hey"
-)
+# mediaBody = MediaFileUpload('./static/uploads/video.mp4')
+# argss = Namespace(
+#     auth_host_name='localhost', 
+#     auth_host_port=[8000, 8080], 
+#     category='27', 
+#     description="Hello", 
+#     keywords='', 
+#     file=mediaBody,
+#     logging_level='ERROR', 
+#     noauth_local_webserver=False, 
+#     privacyStatus='private', 
+#     title="Hey"
+# )
 
 # uploadfun(argss, "PLbEdrDi1tPFjYc8hQI7d5Ed-Ua5aauSrP")

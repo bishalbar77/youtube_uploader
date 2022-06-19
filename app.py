@@ -68,8 +68,8 @@ def add_video_to_youtube_playlist():
         privacyStatus='private', 
         title=title
     )
-    # uploadfun(argss, playlist_id)
+    uploadfun(argss, playlist_id)
     return jsonify({'status' : "Success", 'status_code' : 200, 'message' : "Video will be added to the playlist!", 'data' : ''})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0',port=8080)
