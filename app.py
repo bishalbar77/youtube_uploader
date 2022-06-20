@@ -40,7 +40,12 @@ def add_video_to_youtube_playlist():
     title = request.form.get('title') 
     description = request.form.get('description') 
     playlist_id = request.form.get('playlist_id') 
-    response = service.files().get_media(fileId=fileId[32:])
+    response = service.files().get_media(fileId=fileId[32:65])
+    name = service.files().get(fileId=fileId[32:65]).execute()['name']
+    if title is None:
+        title = name[:-24]
+    if description is None:
+        description = name[:-24]
     fileByte = io.BytesIO()
     downloader = MediaIoBaseDownload(fd=fileByte, request=response)
 
